@@ -1,0 +1,91 @@
+===============================================================================
+                    GUIDA RAPIDA AI COMANDI GIT (CHEAT SHEET)
+===============================================================================
+Mantieni questo file nella tua cartella dei progetti per avere sempre i comandi a portata di mano.
+
+-------------------------------------------------------------------------------
+1. CONFIGURAZIONE INIZIALE (Da fare una sola volta sul PC)
+-------------------------------------------------------------------------------
+Imposta il tuo nome e la tua email (saranno visibili nei salvataggi su GitHub)
+$git config --global user.name "Il Tuo Nome"$ git config --global user.email "la_tua_email@esempio.com"
+
+Consiglio per Ubuntu: Salva il Token in memoria per 30 giorni (evita di digitarlo sempre)
+$ git config --global credential.helper 'cache --timeout=2592000'
+
+-------------------------------------------------------------------------------
+2. INIZIARE UN PROGETTO
+-------------------------------------------------------------------------------
+Opzione A: Crea un nuovo repository Git locale partendo da una cartella vuota/esistente
+$ git init
+
+Opzione B: Scarica sul tuo PC un progetto già esistente su GitHub
+$ git clone <URL_DEL_REPOSITORY>
+
+-------------------------------------------------------------------------------
+3. IL FLUSSO DI LAVORO QUOTIDIANO (Il "Trittico" del salvataggio)
+-------------------------------------------------------------------------------
+Passo 1: Controlla lo stato dei file (quali sono modificati, aggiunti o pronti)
+$ git status
+
+Passo 2: Aggiungi i file all'area di preparazione (Staging Area)
+$git add .                 # Aggiunge TUTTI i file modificati e nuovi nella cartella$ git add nome_file.ext     # Aggiunge solo un file specifico
+
+Passo 3: Crea il punto di salvataggio nella cronologia sul tuo PC
+$ git commit -m "Messaggio chiaro che spiega la modifica"
+
+-------------------------------------------------------------------------------
+4. SINCRONIZZAZIONE CON GITHUB (ONLINE)
+-------------------------------------------------------------------------------
+Invia i tuoi salvataggi locali su GitHub (il tuo codice va online)
+$ git push origin main
+
+Scarica e unisci le modifiche dal server di GitHub al tuo PC locale
+$ git pull origin main
+
+Associa la tua cartella locale a un nuovo repository vuoto su GitHub (solo la 1° volta)
+$ git remote add origin <URL_DEL_REPOSITORY>
+
+Rinomina il ramo principale in 'main' (lo standard attuale di GitHub)
+$ git branch -M main
+
+-------------------------------------------------------------------------------
+5. GESTIONE DEI RAMI (BRANCH) - Per fare esperimenti sicuri senza rompere il codice
+-------------------------------------------------------------------------------
+Mostra l'elenco dei rami disponibili e indica in quale ti trovi (*)
+$ git branch
+
+Crea un nuovo ramo e spostati subito al suo interno
+$ git switch -c <nome-nuovo-ramo>
+
+Spostati in un ramo già esistente (es. torna al ramo principale)
+$ git switch main
+
+Unisci le modifiche di un altro ramo dentro il ramo in cui ti trovi ora
+$ git merge <nome-ramo-da-unire>
+
+Elimina un ramo che non ti serve più (dopo aver fatto il merge)
+$ git branch -d <nome-ramo>
+
+-------------------------------------------------------------------------------
+6. CRONOLOGIA E VERIFICA
+-------------------------------------------------------------------------------
+Mostra la lista cronologica di tutti i commit fatti (Premi 'Q' per uscire dalla lista)
+$ git log --oneline         # Mostra la cronologia in modo compatto (una riga per commit)
+
+Mostra le differenze testuali non ancora salvate nei file
+$ git diff
+
+-------------------------------------------------------------------------------
+7. COMPORTAMENTO IN CASO DI EMERGENZA (Annullare modifiche)
+-------------------------------------------------------------------------------
+Annulla le modifiche non ancora salvate in un file specifico (torna all'ultimo commit)
+$ git checkout -- nome_file.ext
+
+Rimuove un file dall'area di preparazione (se hai fatto 'git add' per errore)
+$ git reset HEAD nome_file.ext
+
+===============================================================================
+NOTA SULLA PASSWORD DI GITHUB:
+Quando usi 'git push', come password devi usare il Personal Access Token (PAT)
+che inizia con 'ghp_...'. Non usare la password del sito web di GitHub.
+===============================================================================

@@ -9,7 +9,7 @@
 #define RESET   "\033[0m"
 
 struct FileNode {
-    char name[100];
+    char name[1000];
     char type;
 
     union {
@@ -35,8 +35,9 @@ void touch(struct FileNode *head, char name[100]){
         return;
     }
     struct FileNode *newFile = malloc(sizeof(struct FileNode));
-    strcpy(newFile->name, name);
-    
+    strncpy(newFile->name, name, 1000);
+    newFile->name[999] = '\0';  // Assicuriamoci che la stringa sia terminata
+
     struct FileNode *curr = head;
 
     newFile->parent = curr;
@@ -104,6 +105,7 @@ struct FileNode *cd(struct FileNode *head, char name[100]){
             }
         }else{
             printf("No such directory\n");
+            printf("no directory named %s\n", name);
             return head;
         } 
     }
@@ -310,7 +312,7 @@ int contaCaratteriPrefisso(const char *line) {
         }
         i++; // Avanza al byte successivo
     }
-    printf("Caratteri di prefisso contati: %d\n", charCount);
+    //printf("Caratteri di prefisso contati: %d\n", charCount);
     return charCount;
 }
 
