@@ -1,0 +1,61 @@
+
+├── Documents/
+│   └── tiamo/
+├── Downloads/
+├── Music/
+├── Pictures/
+├── Public/
+├── snap/
+│   ├── code/
+│   │   ├── 238/
+│   │   ├── 240/
+│   │   ├── common/
+│   │   └── current -> 240/
+│   ├── firefox/
+│   │   ├── 8107/
+│   │   ├── common/
+│   │   └── current -> 8107/
+│   ├── firmware-updater/
+│   │   ├── 226/
+│   │   ├── common/
+│   │   └── current -> 226/
+│   ├── prompting-client/
+│   │   ├── 204/
+│   │   │   ├── Desktop/
+│   │   │   ├── Documents/
+│   │   │   ├── Downloads/
+│   │   │   ├── Music/
+│   │   │   ├── Pictures/
+│   │   │   ├── Public/
+│   │   │   ├── Templates/
+│   │   │   └── Videos/
+│   │   ├── 222/
+│   │   │   ├── Desktop/
+│   │   │   ├── Documents/
+│   │   │   ├── Downloads/
+│   │   │   ├── Music/
+│   │   │   ├── Pictures/
+│   │   │   ├── Public/
+│   │   │   ├── Templates/
+│   │   │   └── Videos/
+│   │   ├── common/
+│   │   └── current -> 222/
+│   ├── snapd-desktop-integration/
+│   │   ├── 361/
+│   │   │   ├── Desktop/
+│   │   │   ├── Documents/
+│   │   │   ├── Downloads/
+│   │   │   ├── Music/
+│   │   │   ├── Pictures/
+│   │   │   ├── Public/
+│   │   │   ├── Templates/
+│   │   │   └── Videos/
+│   │   ├── common/
+│   │   └── current -> 361/
+│   └── snap-store/
+│       ├── 1367/
+│       ├── common/
+│       └── current -> 1367/
+├── syst.txt
+├── Templates/
+└── Videos/
